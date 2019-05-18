@@ -42,7 +42,7 @@ var TV = function() {
             "Birthday: " + jsonData.birthday,
             "Gender: " + jsonData.gender,
             "Country: " + jsonData.country.name,
-            "Output: " + "log.txt"
+            "URL: " + jsonData.url
         ].join("\n\n");
 
         // Append actorData and the divider to log.txt, print showData to the console
