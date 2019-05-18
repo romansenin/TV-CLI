@@ -28,6 +28,9 @@ var TV = function() {
         if (err) throw err;
         console.log(showData);
       });
+    })
+    .catch(function(error){
+        console.log("Issue with finding this show. Try again!");
     });
   };
 
@@ -50,6 +53,9 @@ var TV = function() {
             if (err) throw err;
             console.log(actorData);
         });
+    })
+    .catch(function(error){
+        console.log("Issue with finding this actor. Try again!");
     });
 
   };
