@@ -4,7 +4,8 @@ let tv = new TV();
 let args = process.argv;
 
 let command = args[2];
-let term = args.slice(3).join(" ");
+let term = args.slice(3).join("+");
+console.log(term);
 
 if (!command) {
   command = "show";
@@ -19,8 +20,8 @@ switch(command) {
     tv.findShow(term);
     break;
   case "actor":
-      tv.findActor(term);
+    tv.findActor(term);
     break;
   default:
-    console.log("Usage: node cli <show-or-actor> <actor-or-show-name>");
+    console.log("Usage: node cli [show/actor] [show/actor name]");
 }
