@@ -5,7 +5,6 @@ let args = process.argv;
 
 let command = args[2];
 let term = args.slice(3).join("+");
-console.log(term);
 
 if (!command) {
   command = "show";
