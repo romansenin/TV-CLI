@@ -4,7 +4,7 @@ var fs = require("fs");
 // Create the TV constructor
 var TV = function() {
   // divider will be used as a spacer between the tv data we print in log.txt
-  var divider = "\n------------------------------------------------------------\n\n";
+  var divider = "\r\n------------------------------------------------------------\r\n\r\n";
 
   // findShow takes in the name of a tv show and searches the tvmaze API
   this.findShow = function(show) {
@@ -21,7 +21,7 @@ var TV = function() {
         "Rating: " + jsonData.rating.average,
         "Network: " + jsonData.network.name,
         "Summary: " + jsonData.summary
-      ].join("\n\n");
+      ].join("\r\n\r\n");
 
       // Append showData and the divider to log.txt, print showData to the console
       fs.appendFile("log.txt", showData + divider, function(err) {
@@ -43,7 +43,7 @@ var TV = function() {
             "Gender: " + jsonData.gender,
             "Country: " + jsonData.country.name,
             "URL: " + jsonData.url
-        ].join("\n\n");
+        ].join("\r\n\r\n");
 
         // Append actorData and the divider to log.txt, print showData to the console
         fs.appendFile("log.txt", actorData + divider, function(err) {
