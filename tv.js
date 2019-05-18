@@ -35,20 +35,20 @@ var TV = function() {
     var URL = "http://api.tvmaze.com/search/people?q=" + actor;
 
     axios.get(URL).then(function(response){
-        var jsonData = response.data[0];
+        var jsonData = response.data[0].person;
         // Append the actor's name, birthday, gender, country, and URL to the `log.txt` file
         var actorData = [
             "Actor: " + jsonData.name,
             "Birthday: " + jsonData.birthday,
-            "Gender: " + jsonData.rating.average,
-            "Country: " + jsonData.country,
+            "Gender: " + jsonData.gender,
+            "Country: " + jsonData.country.name,
             "Output: " + "log.txt"
         ].join("\n\n");
 
-        // Append showData and the divider to log.txt, print showData to the console
+        // Append actorData and the divider to log.txt, print showData to the console
         fs.appendFile("log.txt", actorData + divider, function(err) {
             if (err) throw err;
-            console.log(showData);
+            console.log(actorData);
         });
     });
 
