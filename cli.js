@@ -1,3 +1,6 @@
+const TV = require("./tv.js");
+let tv = new TV();
+
 let args = process.argv;
 
 let command = args[2];
@@ -13,10 +16,11 @@ if (!term) {
 
 switch(command) {
   case "show":
-    findShow(term);
+    tv.findShow(term);
     break;
   case "actor":
-    findActor(term);
+      tv.findActor(term);
     break;
   default:
+    console.log("Usage: node cli <show-or-actor> <actor-or-show-name>");
 }
